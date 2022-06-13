@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <table>
+      {% if usernames %}
+        <tr>
+          <th> Usernames </th>
+        </tr>
+        {%- for username in usernames %}
+        <tr>
+          <td>{{ username }}</td>
+        </tr>
+        {%- endfor %}
+      {% else %}
+        <h1>Enter valid Project ID</h1>
+      {% endif %}
+    </table>
+  </body>
+</html>
