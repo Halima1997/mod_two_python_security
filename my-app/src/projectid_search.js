@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 
 export default function App() {
-  const [usernames, setUsernames] = useState([]);
+  const [result, setResult] = useState([]);
   const [query, setQuery] = useState("");
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
   
     if (!query) return;
 
@@ -15,8 +15,16 @@ export default function App() {
       const response = await fetch(
         `users_projectid/${query}`
       );
-      const data = await response.json();
-      setUsernames(data.usernames);
+      
+      const projectid_data = await response.json();
+      console.log(projectid_data)
+      if (!response.ok) {
+        window.alert(response.status)
+        return
+      }
+
+      setResult(projectid_data.result);
+      
     }
     fetchData();
     
@@ -30,34 +38,39 @@ export default function App() {
       }}
      >
       <form onSubmit={handleSubmit}>
+      
         <br/>
+        
         <label>
           Input Project ID:{" "}
-          <input
+          <input 
+            className="forminput"
             type="text"
-            placeholder="enter project_id"
+            placeholder="project id"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
             }}
+            
           />
+          
         </label>
-        <input type="submit" value="Submit"/>
+        <input className="formbutton" type="submit" value="Submit"/>
       </form>
       
       <ul>
         {
-          usernames.map((users) => {
+          result.map((id) => {
             
             return (
-              <div key = { users } >
-                <ul>{users}</ul>
+              <div key = { id } >
+                <ul>{id}</ul>
               </div>
                 
             )
-          })  
-        }
-      </ul>
+          })}
+        </ul>
+
       
     </div>
   );

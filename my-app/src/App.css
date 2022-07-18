@@ -5,3 +5,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.forminput {
+  box-sizing: border-box;
+  height: 39px;
+  width: 300px;
+  border: 2px solid #E6E6E6;
+  border-radius: 20px;
+}
+
+.formbutton {
+      height: 38px;
+      width: 150px;
+      border-radius: 20px;
+      background-color: #d4e3eb;
+  }

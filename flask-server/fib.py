@@ -1,8 +1,10 @@
-a = 1
-b = 1
-total = 0
-while a <= 4000000:
-    if a % 2 == 0:
-        total += a
-    a,b = b, a+b
-print(total)
+import string
+
+
+def caesar(msg, key):
+    alphabet = string.ascii_lowercase
+    shifted_alphabet = alphabet[key:] + alphabet[:key]
+    cipher = str.maketrans(alphabet, shifted_alphabet)
+    return msg.translate(cipher)
+
+print(caesar('hello world',3))
