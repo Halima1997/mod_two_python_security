@@ -1,0 +1,24 @@
+.App {
+    width: 95%;
+    display: flex;
+ 
+  }
+
+
+
+.formbutton {
+    height: 38px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #d4e3eb;
+
+}
+
+.text {
+    width: 95%;
+    display: flex;
+ 
+    font-size: x-large;
+  }
+  
+

@@ -4,18 +4,20 @@ import {Link } from "react-router-dom";
     function home() {
 
         return (
-        <div>
-            <p>
-            Homepage
-            <br />
-            Select a button below.
+        <div >
+            
+            <p className="text">
+                
+            Select a button:
+          
+         
             </p>
-            <Link to="/projectid_search"><button>
+            <Link to="/projectid_search"><button className="formbutton">
             Search by Project ID 
             </button>
             </Link>
             
-            <Link to="/username_search"><button>
+            <Link to="/username_search"><button className="formbutton"> 
             Search by Username 
             </button>
             </Link>
